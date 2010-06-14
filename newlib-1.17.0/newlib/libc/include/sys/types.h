@@ -130,7 +130,11 @@ typedef	char *	caddr_t;
     defined(__sparc__) || defined(__SPU__)
 typedef	unsigned long	ino_t;
 #else
+#ifdef __ino_t_defined
+typedef	__ino_t ino_t;
+#else
 typedef	unsigned short	ino_t;
+#endif /* ino_t */
 #endif
 #endif /*__CYGWIN__*/
 
@@ -183,12 +187,20 @@ typedef unsigned long mode_t;
 typedef unsigned short mode_t;
 #endif
 #else
+#ifdef __mode_t_defined
+typedef __mode_t mode_t _ST_INT32;
+#else
 typedef unsigned int mode_t _ST_INT32;
+#endif /* __mode_t_defined */
 #endif
 #endif /* ! __MS_types__ */
 #endif /*__CYGWIN__*/
 
+#ifdef __nlink_t_defined
+typedef __nlink_t nlink_t;
+#else
 typedef unsigned short nlink_t;
+#endif
 
 /* We don't define fd_set and friends if we are compiling POSIX
    source, or if we have included (or may include as indicated
@@ -251,8 +263,10 @@ typedef _TIMER_T_ timer_t;
 #endif
 
 typedef unsigned long useconds_t;
+#ifndef __susecond_t_defined
+#define __susecond_t_defined
 typedef long suseconds_t;
-
+#endif
 #include <sys/features.h>
 
 

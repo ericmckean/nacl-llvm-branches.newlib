@@ -332,7 +332,16 @@ esac
 # including crt0.
 # THIS TABLE IS ALPHA SORTED.  KEEP IT THAT WAY.
 
+# Horrible, horrible hack: NaCl for ARM uses arm-none-linux-gnueabi as "host"!
 case "${host}" in
+  arm-none-linux-gnueabi)
+	newlib_cflags="${newlib_cflags} -DHAVE_NANOSLEEP"
+	sys_dir=arm
+	posix_dir=posix
+	if [ "x${newlib_may_supply_syscalls}" = "xno" ] ; then
+	  have_crt0="no"
+	fi
+	;;
   *-*-cygwin*)
 	posix_dir=posix
 	stdio64_dir=stdio64
