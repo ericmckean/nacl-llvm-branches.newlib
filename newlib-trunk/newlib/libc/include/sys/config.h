@@ -29,6 +29,10 @@
 #define UINT_MAX (__INT_MAX__ * 2U + 1)
 #endif
 
+#if defined (__xc16x__) || defined (__xc16xL__) || defined (__xc16xS__)
+#define __SMALL_BITFIELDS
+#endif
+
 #ifdef __W65__
 #define __SMALL_BITFIELDS
 #endif
@@ -59,15 +63,17 @@
 /* in other words, go32 */
 #define _FLOAT_RET double
 #endif
-#if defined(__linux__) || defined(__RDOS__)
+#if (defined(__linux__) || defined(__RDOS__)) && !defined(__native_client__)
 /* we want the reentrancy structure to be returned by a function */
 #define __DYNAMIC_REENT__
 #define HAVE_GETDATE
 #define _HAVE_SYSTYPES
 #define _READ_WRITE_RETURN_TYPE _ssize_t
+#if !defined(__native_client__)
 #define __LARGE64_FILES 1
 /* we use some glibc header files so turn on glibc large file feature */
 #define _LARGEFILE64_SOURCE 1
+#endif  /* __native_client__ */
 #endif
 #endif
 
@@ -91,6 +97,17 @@
 #endif
 #ifdef __SPE__
 #define _LONG_DOUBLE double
+#endif
+#endif
+
+/* Configure small REENT structure for Xilinx MicroBlaze platforms */
+#if defined (__MICROBLAZE__)
+#ifndef _REENT_SMALL
+#define _REENT_SMALL
+#endif
+/* Xilinx XMK uses Unix98 mutex */
+#ifdef __XMK__
+#define _UNIX98_THREAD_MUTEX_ATTRIBUTES
 #endif
 #endif
 
@@ -124,11 +141,6 @@
 #define __BUFSIZ__ 16
 #define _REENT_SMALL
 #endif /* __m32c__ */
-
-#ifdef __thumb2__
-/* Thumb-2 based ARMv7M devices are really small.  */
-#define _REENT_SMALL
-#endif
 
 #ifdef __SPU__
 #define MALLOC_ALIGNMENT 16
@@ -178,11 +190,20 @@
 
 #if defined(__CYGWIN__)
 #include <cygwin/config.h>
+#define __LINUX_ERRNO_EXTENSIONS__ 1
+#define _MB_EXTENDED_CHARSETS_ALL 1
+#if !defined (__STRICT_ANSI__) || (__STDC_VERSION__ >= 199901L)
+#define __USE_XOPEN2K 1
+#endif
 #endif
 
 #if defined(__rtems__)
 #define __FILENAME_MAX__ 255
 #define _READ_WRITE_RETURN_TYPE _ssize_t
+#endif
+
+#ifndef __EXPORT
+#define __EXPORT
 #endif
 
 #ifndef __IMPORT
@@ -208,6 +229,14 @@
 #ifndef _REENT_SMALL
 #define _REENT_SMALL
 #endif
+#endif
+
+/* If _MB_EXTENDED_CHARSETS_ALL is set, we want all of the extended
+   charsets.  The extended charsets add a few functions and a couple
+   of tables of a few K each. */
+#ifdef _MB_EXTENDED_CHARSETS_ALL
+#define _MB_EXTENDED_CHARSETS_ISO 1
+#define _MB_EXTENDED_CHARSETS_WINDOWS 1
 #endif
 
 #endif /* __SYS_CONFIG_H__ */

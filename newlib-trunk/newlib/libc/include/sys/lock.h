@@ -16,7 +16,7 @@ typedef struct __local_pthread_mutex_t {
   int mutex_handle;
 } _LOCK_T;
 typedef _LOCK_T _LOCK_RECURSIVE_T;
- 
+
 #define __LOCAL_PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP \
     {0, 1, (0xffffffff), 0, -1}
 #define __LOCAL_PTHREAD_MUTEX_INITIALIZER {0, 0, (0xffffffff), 0, -1}

@@ -37,11 +37,13 @@ GENERAL_SOURCES = \
 	impure.c \
 	fcntlr.c \
 	fstatr.c \
+	getpidr.c \
 	getreent.c \
 	gettimeofdayr.c \
 	isattyr.c \
 	linkr.c \
 	lseekr.c \
+	mkdirr.c \
 	openr.c \
 	readr.c \
 	renamer.c \
@@ -74,9 +76,11 @@ CHEWOUT_FILES = \
 	execr.def \
 	fcntlr.def \
 	fstatr.def \
+	getpidr.def \
 	gettimeofdayr.def \
 	linkr.def \
 	lseekr.def \
+	mkdirr.def \
 	openr.def \
 	readr.def \
 	renamer.def \

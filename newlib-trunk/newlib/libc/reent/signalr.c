@@ -63,38 +63,4 @@ _DEFUN (_kill_r, (ptr, pid, sig),
   return ret;
 }
 
-/*
-FUNCTION
-	<<_getpid_r>>---Reentrant version of getpid
-	
-INDEX
-	_getpid_r
-
-ANSI_SYNOPSIS
-	#include <reent.h>
-	int _getpid_r(struct _reent *<[ptr]>);
-
-TRAD_SYNOPSIS
-	#include <reent.h>
-	int _getpid_r(<[ptr]>)
-	struct _reent *<[ptr]>;
-
-DESCRIPTION
-	This is a reentrant version of <<getpid>>.  It
-	takes a pointer to the global data block, which holds
-	<<errno>>.
-
-	We never need <<errno>>, of course, but for consistency we
-	still must have the reentrant pointer argument.
-*/
-
-int
-_DEFUN (_getpid_r, (ptr),
-     struct _reent *ptr)
-{
-  int ret;
-  ret = _getpid ();
-  return ret;
-}
-
 #endif /* ! defined (REENTRANT_SYSCALLS_PROVIDED) */
