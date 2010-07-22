@@ -37,6 +37,10 @@ void __newlib_thread_init()
    * Fix the initialization - REENT_INIT pointed
    * the pointers to the global structure.
    */
+#if 0
+  /* NOTE: this code stems from the nacl x86 patch for newlib
+   *       but does not quite work for PNaCl
+   */
   impure_data._stdin = &impure_data.__sf[0];
   impure_data._stdout = &impure_data.__sf[1];
   impure_data._stderr = &impure_data.__sf[2];
@@ -44,6 +48,9 @@ void __newlib_thread_init()
   impure_data.__cleanup = _GLOBAL_REENT->__cleanup;
   impure_data.__sglue._niobs = 3;
   impure_data.__sglue._iobs = &_GLOBAL_REENT->__sf[0];
+#else
+  __sinit(&impure_data);
+#endif
 
   /* Set the pointer to point to the thread-specific structure. */
   _impure_ptr = &impure_data;

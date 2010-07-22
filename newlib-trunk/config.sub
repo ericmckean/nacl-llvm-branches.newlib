@@ -126,7 +126,7 @@ case $maybe_os in
   nto-qnx* | linux-gnu* | linux-dietlibc | linux-newlib* | linux-uclibc* | \
   uclinux-uclibc* | uclinux-gnu* | kfreebsd*-gnu* | knetbsd*-gnu* | netbsd*-gnu* | \
   kopensolaris*-gnu* | \
-  storm-chaos* | os2-emx* | rtmk-nova* | nacl* | pnacl*)
+  storm-chaos* | os2-emx* | rtmk-nova* | nacl*)
     os=-$maybe_os
     basic_machine=`echo $1 | sed 's/^\(.*\)-\([^-]*-[^-]*\)$/\1/'`
     ;;
@@ -783,10 +783,6 @@ case $basic_machine in
 		basic_machine=x86_64-pc
 		os=-nacl
 		;;
-	pnacl)
-		basic_machine=arm-none
-		os=-nacl-gnueabi
-		;;
 	ncr3000)
 		basic_machine=i486-ncr
 		os=-sysv4
@@ -930,6 +926,14 @@ case $basic_machine in
 		;;
 	pn)
 		basic_machine=pn-gould
+		;;
+	pnacl)
+		basic_machine=pnacl-unknown
+		os=-nacl
+		;;
+	pnacl-*)
+		basic_machine=pnacl-unknown
+		os=-nacl
 		;;
 	power)	basic_machine=power-ibm
 		;;

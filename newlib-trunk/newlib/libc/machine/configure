@@ -986,6 +986,7 @@ mn10300
 moxie
 mt
 necv70
+pnacl
 powerpc
 rx
 sh
@@ -12674,6 +12675,8 @@ subdirs="$subdirs a29k"
 	mt) subdirs="$subdirs mt"
  ;;
 	necv70) subdirs="$subdirs necv70"
+ ;;
+	pnacl) subdirs="$subdirs pnacl"
  ;;
 	powerpc) subdirs="$subdirs powerpc"
  ;;

@@ -523,6 +523,10 @@ case "${target}" in
   *-*-rtems*)
     noconfigdirs="$noconfigdirs target-libgloss ${libgcj}"
     ;;
+  pnacl*)
+    noconfigdirs="$noconfigdirs ${libgcj} target-qthreads"
+    # TODO(pdox): Must this be different from nacl below?
+    ;;
   *-*-nacl*)
     noconfigdirs="$noconfigdirs ${libgcj}"
     ;;
@@ -966,13 +970,6 @@ case "${target}" in
   *-*-lynxos*)
     noconfigdirs="$noconfigdirs target-newlib target-libgloss ${libgcj}"
     ;; 
-  *-*-nacl*)
-    noconfigdirs="$noconfigdirs target-qthreads"
-    case ${with_newlib} in
-      no) noconfigdirs="$noconfigdirs target-newlib target-libgloss"
-    esac
-    libgloss_dir=arm
-    ;;
   *-*-*)
     noconfigdirs="$noconfigdirs ${libgcj}"
     ;;
