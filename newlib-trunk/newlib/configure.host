@@ -354,6 +354,9 @@ case "${host}" in
 	newlib_cflags="${newlib_cflags} -DHAVE_NANOSLEEP"
 	sys_dir=nacl
 	posix_dir=posix
+        if [ "x${newlib_may_supply_syscalls}" = "xno" ] ; then
+          have_crt0="no"
+        fi
 	;;
   *-*-netware*)
 	signal_dir=

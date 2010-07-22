@@ -967,7 +967,11 @@ case "${target}" in
     noconfigdirs="$noconfigdirs target-newlib target-libgloss ${libgcj}"
     ;; 
   *-*-nacl*)
-    noconfigdirs="$noconfigdirs"
+    noconfigdirs="$noconfigdirs target-qthreads"
+    case ${with_newlib} in
+      no) noconfigdirs="$noconfigdirs target-newlib target-libgloss"
+    esac
+    libgloss_dir=arm
     ;;
   *-*-*)
     noconfigdirs="$noconfigdirs ${libgcj}"
