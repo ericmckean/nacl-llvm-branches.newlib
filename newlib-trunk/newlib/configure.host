@@ -221,6 +221,7 @@ case "${host_cpu}" in
   or32)
 	;;
   pnacl)
+        libm_machine_dir=pnacl
         machine_dir=pnacl
         ;;
   powerpc*)
