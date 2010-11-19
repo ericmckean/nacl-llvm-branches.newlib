@@ -1,10 +1,12 @@
 
 _BEGIN_STD_C
-
-#if defined(__native_client__)
-# define _setjmp(buf) setjmp(buf)
-# define _longjmp(buf, val) longjmp(buf, val)
-#endif
+/* @LOCALMOD-START */
+/*
+ * Disable all the setjmp magic in this file and rely on the top level
+ * setjmp.h instead.
+ */
+#if 0
+/* @LOCALMOD-END */
 
 #if defined(__arm__) || defined(__thumb__)
 /*
@@ -348,3 +350,4 @@ extern int _setjmp(jmp_buf);
 }
 #endif
 #endif /* __CYGWIN__ or __rtems__ */
+#endif /* @LOCALMOD */
