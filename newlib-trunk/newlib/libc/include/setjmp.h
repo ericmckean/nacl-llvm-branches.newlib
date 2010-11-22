@@ -11,9 +11,7 @@
 /* @LOCALMOD-START */
 /* #include <machine/setjmp.h> */
 /*force this (opaque) buffer to be 1k in size and 64bit aligned */
-typedef struct {
-  double dummy[128];
-} jmp_buf;
+typedef double jmp_buf[128];
 
 #define _setjmp(buf) setjmp(buf)
 #define _longjmp(buf, val) longjmp(buf, val)
