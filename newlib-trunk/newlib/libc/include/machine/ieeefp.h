@@ -73,6 +73,10 @@
 #endif
 #endif
 
+#ifdef __pnacl__
+#  define __IEEE_LITTLE_ENDIAN
+#endif
+
 #ifdef __hppa__
 #define __IEEE_BIG_ENDIAN
 #endif
