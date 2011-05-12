@@ -117,7 +117,7 @@ am__objects_4 = lib_a-a64l.$(OBJEXT) lib_a-btowc.$(OBJEXT) \
 	lib_a-wctob.$(OBJEXT)
 am__objects_5 = lib_a-putenv.$(OBJEXT) lib_a-putenv_r.$(OBJEXT) \
 	lib_a-setenv.$(OBJEXT) lib_a-setenv_r.$(OBJEXT)
-am__objects_6 = lib_a-system.$(OBJEXT)
+am__objects_6 =
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@am__objects_7 = $(am__objects_4) \
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@	$(am__objects_5) \
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@	$(am__objects_6)
@@ -152,16 +152,15 @@ am__objects_11 = a64l.lo btowc.lo getopt.lo getsubopt.lo l64a.lo \
 	mbsrtowcs.lo on_exit.lo valloc.lo wcrtomb.lo wcsnrtombs.lo \
 	wcsrtombs.lo wctob.lo
 am__objects_12 = putenv.lo putenv_r.lo setenv.lo setenv_r.lo
-am__objects_13 = system.lo
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@am__objects_14 = $(am__objects_11) \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@am__objects_13 = $(am__objects_11) \
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@	$(am__objects_12) \
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@	$(am__objects_13)
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_TRUE@am__objects_14 = $(am__objects_11) \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@	$(am__objects_6)
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_TRUE@am__objects_13 = $(am__objects_11) \
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_TRUE@	$(am__objects_12)
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@am__objects_14 =  \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@am__objects_13 =  \
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@	$(am__objects_11)
 @USE_LIBTOOL_TRUE@am_libstdlib_la_OBJECTS = $(am__objects_9) \
-@USE_LIBTOOL_TRUE@	$(am__objects_10) $(am__objects_14)
+@USE_LIBTOOL_TRUE@	$(am__objects_10) $(am__objects_13)
 libstdlib_la_OBJECTS = $(am_libstdlib_la_OBJECTS)
 libstdlib_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -253,6 +252,7 @@ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
+PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 RANLIB = @RANLIB@
@@ -395,9 +395,9 @@ ELIX_3_SOURCES = \
 	setenv.c	\
 	setenv_r.c
 
-ELIX_4_SOURCES = \
-	system.c
-
+ELIX_4_SOURCES = 
+# @LOCALMOD
+ELIX_4_SOURCES_PNACL_ELIMINATED = system.c
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_FALSE@ELIX_SOURCES = $(ELIX_2_SOURCES) $(ELIX_3_SOURCES) $(ELIX_4_SOURCES)
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@@ELIX_LEVEL_3_TRUE@ELIX_SOURCES = $(ELIX_2_SOURCES) $(ELIX_3_SOURCES)
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@ELIX_SOURCES = $(ELIX_2_SOURCES)
@@ -1170,12 +1170,6 @@ lib_a-setenv_r.o: setenv_r.c
 
 lib_a-setenv_r.obj: setenv_r.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-setenv_r.obj `if test -f 'setenv_r.c'; then $(CYGPATH_W) 'setenv_r.c'; else $(CYGPATH_W) '$(srcdir)/setenv_r.c'; fi`
-
-lib_a-system.o: system.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-system.o `test -f 'system.c' || echo '$(srcdir)/'`system.c
-
-lib_a-system.obj: system.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-system.obj `if test -f 'system.c'; then $(CYGPATH_W) 'system.c'; else $(CYGPATH_W) '$(srcdir)/system.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

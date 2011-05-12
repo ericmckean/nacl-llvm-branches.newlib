@@ -17,7 +17,7 @@ src = 	k_standard.c k_rem_pio2.c \
 	w_gamma.c wr_gamma.c w_hypot.c w_j0.c \
 	w_j1.c w_jn.c w_lgamma.c wr_lgamma.c \
 	w_log.c w_log10.c w_pow.c w_remainder.c \
-	w_scalb.c w_sinh.c w_sqrt.c \
+	w_scalb.c w_sinh.c \
 	w_sincos.c \
 	w_cabs.c w_drem.c \
 	s_asinh.c s_atan.c s_ceil.c \
@@ -26,6 +26,10 @@ src = 	k_standard.c k_rem_pio2.c \
 	s_signif.c s_sin.c \
 	s_tan.c s_tanh.c \
 	w_exp2.c w_tgamma.c
+
+#@LOCALMOD
+# NOTE: these are already overwritten in newlib/libm/machine/pnacl/
+src_pnacl_eliminated = w_sqrt.c 
 
 fsrc =	kf_rem_pio2.c \
 	kf_cos.c kf_sin.c kf_tan.c \
@@ -40,7 +44,7 @@ fsrc =	kf_rem_pio2.c \
 	wf_gamma.c wrf_gamma.c wf_hypot.c wf_j0.c \
 	wf_j1.c wf_jn.c wf_lgamma.c wrf_lgamma.c \
 	wf_log.c wf_log10.c wf_pow.c wf_remainder.c \
-	wf_scalb.c wf_sinh.c wf_sqrt.c \
+	wf_scalb.c wf_sinh.c \
 	wf_sincos.c \
 	wf_cabs.c wf_drem.c \
 	sf_asinh.c sf_atan.c sf_ceil.c \
@@ -49,6 +53,10 @@ fsrc =	kf_rem_pio2.c \
 	sf_signif.c sf_sin.c \
 	sf_tan.c sf_tanh.c \
 	wf_exp2.c wf_tgamma.c
+
+#@LOCALMOD
+# NOTE: these are already overwritten in newlib/libm/machine/pnacl/
+fsrc_pnacl_eliminated = wf_sqrt.c 
 
 libmath_la_LDFLAGS = -Xcompiler -nostdlib
 

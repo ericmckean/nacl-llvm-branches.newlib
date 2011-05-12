@@ -7,7 +7,8 @@ POSIX_SUBDIR = posix
 endif
 
 if HAVE_SIGNAL_DIR
-SIGNAL_SUBDIR = signal
+# @LOCALMOD: pnacl does not use signal
+# SIGNAL_SUBDIR = signal
 endif
 
 if HAVE_SYSCALL_DIR

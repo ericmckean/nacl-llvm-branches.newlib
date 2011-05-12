@@ -19,7 +19,9 @@ STDIO64_DEFS = \
 endif
 
 ELIX_2_SOURCES = $(STDIO64_SOURCES)
-ELIX_3_SOURCES = execr.c
+ELIX_3_SOURCES = 
+# @LOCALMOD 
+ELIX_3_SOURCES_PNACL_ELIMINATED = execr.c
 
 if ELIX_LEVEL_1
 ELIX_SOURCES =
@@ -31,29 +33,33 @@ ELIX_SOURCES = $(ELIX_2_SOURCES) $(ELIX_3_SOURCES)
 endif
 endif
 
+
 GENERAL_SOURCES = \
 	closer.c \
 	reent.c \
 	impure.c \
-	fcntlr.c \
 	fstatr.c \
 	getpidr.c \
 	getreent.c \
 	gettimeofdayr.c \
 	isattyr.c \
-	linkr.c \
 	lseekr.c \
-	mkdirr.c \
 	openr.c \
 	readr.c \
-	renamer.c \
-	signalr.c \
 	signgam.c \
 	sbrkr.c \
 	statr.c \
-	timesr.c \
-	unlinkr.c \
 	writer.c
+
+# @LOCALMOD 
+GENERAL_SOURCES_PNACL_ELIMINATED = \
+                             fcntlr.c \
+	                     linkr.c \
+                             mkdirr.c \
+                             renamer.c \
+                             signalr.c \
+	 	 	     timesr.c \
+                             unlinkr.c 
 
 libreent_la_LDFLAGS = -Xcompiler -nostdlib
 

@@ -76,8 +76,7 @@ am__objects_1 = lib_a-clearerr.$(OBJEXT) lib_a-fclose.$(OBJEXT) \
 	lib_a-printf.$(OBJEXT) lib_a-putc.$(OBJEXT) \
 	lib_a-putchar.$(OBJEXT) lib_a-putc_u.$(OBJEXT) \
 	lib_a-putchar_u.$(OBJEXT) lib_a-puts.$(OBJEXT) \
-	lib_a-refill.$(OBJEXT) lib_a-remove.$(OBJEXT) \
-	lib_a-rename.$(OBJEXT) lib_a-rewind.$(OBJEXT) \
+	lib_a-refill.$(OBJEXT) lib_a-rewind.$(OBJEXT) \
 	lib_a-rget.$(OBJEXT) lib_a-scanf.$(OBJEXT) \
 	lib_a-sccl.$(OBJEXT) lib_a-setbuf.$(OBJEXT) \
 	lib_a-setbuffer.$(OBJEXT) lib_a-setlinebuf.$(OBJEXT) \
@@ -85,15 +84,14 @@ am__objects_1 = lib_a-clearerr.$(OBJEXT) lib_a-fclose.$(OBJEXT) \
 	lib_a-siscanf.$(OBJEXT) lib_a-sniprintf.$(OBJEXT) \
 	lib_a-snprintf.$(OBJEXT) lib_a-sprintf.$(OBJEXT) \
 	lib_a-sscanf.$(OBJEXT) lib_a-stdio.$(OBJEXT) \
-	lib_a-tmpfile.$(OBJEXT) lib_a-tmpnam.$(OBJEXT) \
-	lib_a-ungetc.$(OBJEXT) lib_a-vdiprintf.$(OBJEXT) \
-	lib_a-vdprintf.$(OBJEXT) lib_a-viprintf.$(OBJEXT) \
-	lib_a-viscanf.$(OBJEXT) lib_a-vprintf.$(OBJEXT) \
-	lib_a-vscanf.$(OBJEXT) lib_a-vsiprintf.$(OBJEXT) \
-	lib_a-vsiscanf.$(OBJEXT) lib_a-vsnprintf.$(OBJEXT) \
-	lib_a-vsniprintf.$(OBJEXT) lib_a-vsprintf.$(OBJEXT) \
-	lib_a-vsscanf.$(OBJEXT) lib_a-wbuf.$(OBJEXT) \
-	lib_a-wsetup.$(OBJEXT)
+	lib_a-tmpnam.$(OBJEXT) lib_a-ungetc.$(OBJEXT) \
+	lib_a-vdiprintf.$(OBJEXT) lib_a-vdprintf.$(OBJEXT) \
+	lib_a-viprintf.$(OBJEXT) lib_a-viscanf.$(OBJEXT) \
+	lib_a-vprintf.$(OBJEXT) lib_a-vscanf.$(OBJEXT) \
+	lib_a-vsiprintf.$(OBJEXT) lib_a-vsiscanf.$(OBJEXT) \
+	lib_a-vsnprintf.$(OBJEXT) lib_a-vsniprintf.$(OBJEXT) \
+	lib_a-vsprintf.$(OBJEXT) lib_a-vsscanf.$(OBJEXT) \
+	lib_a-wbuf.$(OBJEXT) lib_a-wsetup.$(OBJEXT)
 @ELIX_LEVEL_1_FALSE@am__objects_2 = lib_a-asiprintf.$(OBJEXT) \
 @ELIX_LEVEL_1_FALSE@	lib_a-asprintf.$(OBJEXT) \
 @ELIX_LEVEL_1_FALSE@	lib_a-fcloseall.$(OBJEXT) \
@@ -147,14 +145,13 @@ am__objects_4 = clearerr.lo fclose.lo fdopen.lo feof.lo ferror.lo \
 	ftell.lo fvwrite.lo fwalk.lo fwrite.lo getc.lo getchar.lo \
 	getc_u.lo getchar_u.lo getdelim.lo getline.lo gets.lo \
 	iprintf.lo iscanf.lo makebuf.lo perror.lo printf.lo putc.lo \
-	putchar.lo putc_u.lo putchar_u.lo puts.lo refill.lo remove.lo \
-	rename.lo rewind.lo rget.lo scanf.lo sccl.lo setbuf.lo \
-	setbuffer.lo setlinebuf.lo setvbuf.lo siprintf.lo siscanf.lo \
-	sniprintf.lo snprintf.lo sprintf.lo sscanf.lo stdio.lo \
-	tmpfile.lo tmpnam.lo ungetc.lo vdiprintf.lo vdprintf.lo \
-	viprintf.lo viscanf.lo vprintf.lo vscanf.lo vsiprintf.lo \
-	vsiscanf.lo vsnprintf.lo vsniprintf.lo vsprintf.lo vsscanf.lo \
-	wbuf.lo wsetup.lo
+	putchar.lo putc_u.lo putchar_u.lo puts.lo refill.lo rewind.lo \
+	rget.lo scanf.lo sccl.lo setbuf.lo setbuffer.lo setlinebuf.lo \
+	setvbuf.lo siprintf.lo siscanf.lo sniprintf.lo snprintf.lo \
+	sprintf.lo sscanf.lo stdio.lo tmpnam.lo ungetc.lo vdiprintf.lo \
+	vdprintf.lo viprintf.lo viscanf.lo vprintf.lo vscanf.lo \
+	vsiprintf.lo vsiscanf.lo vsnprintf.lo vsniprintf.lo \
+	vsprintf.lo vsscanf.lo wbuf.lo wsetup.lo
 @ELIX_LEVEL_1_FALSE@am__objects_5 = asiprintf.lo asprintf.lo \
 @ELIX_LEVEL_1_FALSE@	fcloseall.lo fseeko.lo ftello.lo getw.lo \
 @ELIX_LEVEL_1_FALSE@	mktemp.lo putw.lo vasiprintf.lo \
@@ -284,6 +281,7 @@ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
+PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 RANLIB = @RANLIB@
@@ -402,8 +400,6 @@ GENERAL_SOURCES = \
 	putchar_u.c			\
 	puts.c				\
 	refill.c			\
-	remove.c			\
-	rename.c			\
 	rewind.c			\
 	rget.c				\
 	scanf.c			\
@@ -419,7 +415,6 @@ GENERAL_SOURCES = \
 	sprintf.c			\
 	sscanf.c			\
 	stdio.c			\
-	tmpfile.c			\
 	tmpnam.c			\
 	ungetc.c			\
 	vdiprintf.c			\
@@ -437,6 +432,9 @@ GENERAL_SOURCES = \
 	wbuf.c				\
 	wsetup.c
 
+
+# @LOCALMOD:
+GENERAL_SOURCES_PNACL_ELIMINATED = eliminated: remove.c rename.c tmpfile.c		
 @ELIX_LEVEL_1_FALSE@ELIX_2_SOURCES = \
 @ELIX_LEVEL_1_FALSE@	asiprintf.c		\
 @ELIX_LEVEL_1_FALSE@	asprintf.c		\
@@ -930,18 +928,6 @@ lib_a-refill.o: refill.c
 lib_a-refill.obj: refill.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-refill.obj `if test -f 'refill.c'; then $(CYGPATH_W) 'refill.c'; else $(CYGPATH_W) '$(srcdir)/refill.c'; fi`
 
-lib_a-remove.o: remove.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-remove.o `test -f 'remove.c' || echo '$(srcdir)/'`remove.c
-
-lib_a-remove.obj: remove.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-remove.obj `if test -f 'remove.c'; then $(CYGPATH_W) 'remove.c'; else $(CYGPATH_W) '$(srcdir)/remove.c'; fi`
-
-lib_a-rename.o: rename.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-rename.o `test -f 'rename.c' || echo '$(srcdir)/'`rename.c
-
-lib_a-rename.obj: rename.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-rename.obj `if test -f 'rename.c'; then $(CYGPATH_W) 'rename.c'; else $(CYGPATH_W) '$(srcdir)/rename.c'; fi`
-
 lib_a-rewind.o: rewind.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-rewind.o `test -f 'rewind.c' || echo '$(srcdir)/'`rewind.c
 
@@ -1031,12 +1017,6 @@ lib_a-stdio.o: stdio.c
 
 lib_a-stdio.obj: stdio.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stdio.obj `if test -f 'stdio.c'; then $(CYGPATH_W) 'stdio.c'; else $(CYGPATH_W) '$(srcdir)/stdio.c'; fi`
-
-lib_a-tmpfile.o: tmpfile.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-tmpfile.o `test -f 'tmpfile.c' || echo '$(srcdir)/'`tmpfile.c
-
-lib_a-tmpfile.obj: tmpfile.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-tmpfile.obj `if test -f 'tmpfile.c'; then $(CYGPATH_W) 'tmpfile.c'; else $(CYGPATH_W) '$(srcdir)/tmpfile.c'; fi`
 
 lib_a-tmpnam.o: tmpnam.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-tmpnam.o `test -f 'tmpnam.c' || echo '$(srcdir)/'`tmpnam.c

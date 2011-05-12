@@ -6,21 +6,26 @@ INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
 
 GENERAL_SOURCES = \
 	closedir.c collate.c collcmp.c creat.c \
-	fnmatch.c glob.c _isatty.c isatty.c \
+	fnmatch.c _isatty.c isatty.c \
 	opendir.c readdir.c readdir_r.c \
 	regcomp.c regerror.c regexec.c regfree.c \
 	rewinddir.c sleep.c usleep.c \
 	telldir.c
+# @LOCALMOD
+GENERAL_SOURCES_PNACL_ELIMINATED = glob.c 
 
 ELIX_2_SOURCES = \
         scandir.c seekdir.c
 
-ELIX_3_SOURCES = \
+ELIX_3_SOURCES = 
+# @LOCALMOD
+ELIX_3_SOURCES_PNACL_ELIMINATED = \
 	execl.c execle.c execlp.c execv.c \
 	execve.c execvp.c wordexp.c wordfree.c
 
-ELIX_4_SOURCES = \
-	popen.c 
+ELIX_4_SOURCES = 
+# @LOCALMOD
+ELIX_4_SOURCES_PNACL_ELIMINATED = popen.c 
 
 if ELIX_LEVEL_1
 ELIX_SOURCES =

@@ -16,7 +16,9 @@ GENERAL_SOURCES = \
 if ELIX_LEVEL_1
 ELIX_SOURCES =
 else
-ELIX_SOURCES = \
+ELIX_SOURCES = 
+# @LOCALMOD
+ELIX_SOURCES_PNACL_ELIMINATED = \
 	hash.c \
 	hash_bigkey.c \
 	hash_buf.c \

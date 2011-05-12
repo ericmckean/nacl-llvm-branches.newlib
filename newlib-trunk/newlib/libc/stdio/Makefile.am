@@ -50,8 +50,6 @@ GENERAL_SOURCES = \
 	putchar_u.c			\
 	puts.c				\
 	refill.c			\
-	remove.c			\
-	rename.c			\
 	rewind.c			\
 	rget.c				\
 	scanf.c			\
@@ -67,7 +65,6 @@ GENERAL_SOURCES = \
 	sprintf.c			\
 	sscanf.c			\
 	stdio.c			\
-	tmpfile.c			\
 	tmpnam.c			\
 	ungetc.c			\
 	vdiprintf.c			\
@@ -84,6 +81,10 @@ GENERAL_SOURCES = \
 	vsscanf.c			\
 	wbuf.c				\
 	wsetup.c
+
+# @LOCALMOD:
+GENERAL_SOURCES_PNACL_ELIMINATED = eliminated: remove.c rename.c tmpfile.c		
+
 
 ## The following are EL/IX level 2 interfaces
 if ELIX_LEVEL_1

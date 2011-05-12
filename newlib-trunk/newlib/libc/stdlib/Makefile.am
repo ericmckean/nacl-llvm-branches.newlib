@@ -126,8 +126,9 @@ ELIX_3_SOURCES = \
 	setenv.c	\
 	setenv_r.c
 
-ELIX_4_SOURCES = \
-	system.c
+ELIX_4_SOURCES = 
+# @LOCALMOD
+ELIX_4_SOURCES_PNACL_ELIMINATED = system.c
 
 if ELIX_LEVEL_1
 ELIX_SOURCES =
